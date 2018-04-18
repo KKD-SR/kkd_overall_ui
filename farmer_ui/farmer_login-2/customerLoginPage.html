@@ -1,65 +1,123 @@
 <html>
-  <head>
+
+<head>
     <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-  </head>
+    <script type="text/javascript">
+        webshim.setOptions('forms-ext', {
+            replaceUI: 'auto',
+            types: 'date',
+            date: {
+                startView: 2,
+                inlinePicker: true,
+                classes: 'hide-inputbtns'
+            }
+        });
+        webshim.setOptions('forms', {
+            lazyCustomMessages: true
+        });
+        //start polyfilling
+        webshim.polyfill('forms forms-ext');
 
-  <body>
-  <div class="container">
-  <div class="row">
+        //only last example using format display
+        $(function() {
+            $('.format-date').each(function() {
+                var $display = $('.date-display', this);
+                $(this).on('change', function(e) {
+                    //webshim.format will automatically format date to according to webshim.activeLang or the browsers locale
+                    var localizedDate = webshim.format.date($.prop(e.target, 'value'));
+                    $display.html(localizedDate);
+                });
+            });
+        });
 
-    <div class="main">
+    </script>
 
-      <h3>Please Log In, or <a href="#">Sign Up</a></h3>
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
-        </div>
-      </div>
-      <div class="login-or">
-        <hr class="hr-or">
-        <span class="span-or">or</span>
-      </div>
+</head>
 
-      <form role="form">
-        <div class="form-group">
-          <label for="inputUsernameEmail">Username or email</label>
-          <input type="text" class="form-control" id="inputUsernameEmail">
-        </div>
-        <div class="form-group">
-          <a class="pull-right" href="#">Forgot password?</a>
-          <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" id="inputPassword">
-        </div>
-        <div class="checkbox pull-right">
-          <label>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="main">
+
+                <h3>Please Log In, or <a href="#">Sign Up</a></h3>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
+                    </div>
+                </div>
+                <div class="login-or">
+                    <hr class="hr-or">
+                    <span class="span-or">or</span>
+                </div>
+
+                <form role="form">
+                    <div class="form-group">
+                        <label for="inputUsernameEmail">Username or email</label>
+                        <input type="text" class="form-control" id="inputUsernameEmail">
+                    </div>
+                    <div class="form-group">
+                        <a class="pull-right" href="#">Forgot password?</a>
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword">
+                    </div>
+                    <div class="checkbox pull-right">
+                        <label>
             <input type="checkbox">
             Remember me </label>
-        </div>
-        <button class="btn btn btn-primary" >
+                    </div>
+                    <button class="btn btn btn-primary">
             <a href="../farmer_account-3.html" style="color: aliceblue">
           Log In
                 </a>
         </button>
-      <button class="btn btn btn-primary">
-          <a href="../farmer_register-2.1,2.2/customerRegisterPage.html" style="color: aliceblue">
-       Register
-          </a>
-        </button>
-
-        </form>
-    
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Register</button>
+                </form>
+            </div>
+        </div>
     </div>
-    
-  </div>
-  </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Please verify you aadhar and mobile number</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Aadhar Number:</label>
+                            <input type="text" class="form-control" id="expected-time">
+                            <button class="btn btn btn-primary" style="margin-top: 10px" type="button">Go!!</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Enter the OTP:</label>
+                            <input type="text" class="form-control" id="expected-time">
+                            <button class="btn btn btn-primary" style="margin-top: 10px"><a href="../farmer_register-2.1,2.2/customerRegisterPage.html" style="color: aliceblue">Verify</a></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  </body>
 </html>

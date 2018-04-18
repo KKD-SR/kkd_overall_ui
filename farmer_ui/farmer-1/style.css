@@ -184,3 +184,11 @@ body {
         text-align: center;
     }
 }
+
+p{
+    font-family: 'Roboto Slab', serif;
+}
+
+h2{
+    font-family: 'Rubik', sans-serif;
+}
