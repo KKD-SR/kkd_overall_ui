@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="../../Desktop/3.css" type="text/css"> 
-  <style>
+  <title>3</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+ <style>
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 50px;
+  height: 24px;
 }
 
 .switch input {display:none;}
@@ -31,8 +27,8 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 16px;
+  width: 16px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -62,99 +58,87 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-</style></head>
-
+.ap{
+  margin:100px;
+}
+</style>
 <body>
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <img class="img-fluid d-block rounded-circle mr-auto p-5" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg"> </div>
-        <div class="p-4 col-md-6">
-          <div class="row">
-            <div class="col-md-12"><br /><br /><br />
-              <a class="btn btn-primary w-75" href="farmer_MyAccunt-3.1.html">My Account</a><br /><br />
-              <div class="row"> </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-              	<div class="col-md-6">
-              		<h6>Orders Auto Accept:</h6>
-              	</div>
-              	<div class="col-md-6">
-              	<label class="switch">
-  				<input type="checkbox" checked>
-  				<span class="slider round"></span>
-			  </label>
-              </div>
-              <div class="col-md-6">
-              		<h6>Active:</h6>
-              	</div>
-            <div class="col-md-6">
-              <label class="switch">
-  			  <input type="checkbox" checked>
-              <span class="slider round"></span>
-			  </label>
-            </div>
-          </div>
-              <a class="btn btn-primary w-75" href="#">Bank Details</a>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
+  <div class="ap">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
     </div>
-  <div class="py-5">
-    <div class="container">
+    <div class="col-md-4">
+      <br /><br /><img alt="Bootstrap Image Preview" src="http://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle" /><br /><br />
+      <h3>
+        Name of the Farmer
+      </h3>
+      <h3>
+        KKD Farmer ID
+      </h3>
+    </div>
+    <div class="col-md-4">
+       <br /><br />
+      <button type="button" class="btn btn-md btn-block btn-info">
+        MyAccount
+      </button> <br />
       <div class="row">
         <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-12">
-                  <a class="btn btn-primary w-75" href="farmer_viewProduct-3.5/view-product.html">View products</a><br /><br />
-                </div>
-              </div>
-              <div class="row"></div>
-              <div class="row">
-                <div class="col-md-12">
-                  <a class="btn btn-primary w-75" href="#">Buy Products</a><br /><br />
-                </div>
-              </div>
-              <div class="row"></div>
-              <div class="row">
-                <div class="col-md-12">
-                  <a class="btn btn-primary w-75" href="farmer_addProduct-3.2/src/index.html">Add Products</a><br /><br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-12">
-                  <a class="btn btn-primary w-75" href="farmer_previous_order-3.4/src/index.html">Previous Orders</a><br /><br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row"></div>
-          <div class="row">
-            <div class="col-md-12">
-              <a class="btn btn-primary w-75" href="farmer_current_order_request-3.3.html">Current Order Requests</a><br /><br />
-            </div>
-          </div>
-        </div>
+      <h6>Active:</h6>
+    </div>
+      <div class="col-md-6">
+       <label class="switch">
+          <input type="checkbox" checked>
+              <span class="slider round"></span>
+        </label>
       </div>
+      </div>
+      <div class="row">
+      <div class="col-md-6">
+        <h6>Orders Auto Accept:</h6>
+      </div>
+         <div class="col-md-6">
+         <label class="switch">
+          <input type="checkbox" checked>
+              <span class="slider round"></span>
+        </label>
+      </div>
+      </div>
+       <br />
+      <button type="button" class="btn btn-block btn-info">
+        BankDetails
+      </button>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div><br /><br />
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-4">
+       
+      <button type="button" class="btn btn-block btn-info">
+        ViewProducts
+      </button> <br /><br />
+      <button type="button" class="btn btn-block btn-info">
+        AddProducts
+      </button>
+    </div>
+    <div class="col-md-4">
+       
+      <button type="button" class="btn btn-block btn-info">
+        PreviousOrders
+      </button> <br /><br />
+      <button type="button" class="btn btn-block btn-info">
+        CurrentOrderRequests
+      </button>
+    </div>
+    <div class="col-md-2">
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-
-</html>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
